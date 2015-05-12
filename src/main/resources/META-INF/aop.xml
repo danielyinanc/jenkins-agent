@@ -1,0 +1,18 @@
+<aspectj>
+
+    <aspects>
+        <aspect name="monitor.MonitorAspect"/>
+    </aspects>
+
+    <weaver options="-XnoInline">
+        <!-- <include within="*"/> -->
+        <!-- Do not weave types within the "bar" pakage -->
+       <exclude within="java..*"/>
+        <exclude within="javax..*"/>
+        <exclude within="org.apache..*"/>
+        <exclude within="com.thoughtworks.xstream..*"/>
+        <exclude within="com.google..*"/>
+        <exclude within="org.jenkinsci.constant_pool_scanner..*"/>
+    </weaver>
+
+</aspectj>
